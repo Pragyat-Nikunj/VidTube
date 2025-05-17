@@ -28,12 +28,12 @@ A production-ready RESTful API for a video-sharing platform (like YouTube), buil
 - Centralized error handling
 
 ## Tech Stack
-- Backend: Node.js & Express
-- Database: MongoDB & Mongoose
-- Uploads: Multer + Cloudinary
-- Auth: JWT
-- DevTools: Nodemon
-- Hosting: Render
+- **Backend**: Node.js & Express
+- **Database**: MongoDB & Mongoose
+- **Uploads**: Multer + Cloudinary
+- **Auth**: JWT
+- **DevTools**: Nodemon
+- **Hosting**: Render
 
 ## Getting Started
 
