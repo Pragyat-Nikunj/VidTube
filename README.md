@@ -13,6 +13,7 @@ A production-ready RESTful API for a video-sharing platform (like YouTube), buil
 - [Environment Variables](#environment-variables)
 - [Running the Server](#running-the-server)
 - [Live Demo](#live-demo)
+- [Postman Testing](#postman-testing)
 - [Usage & Endpoints](#usage--endpoints)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
@@ -103,6 +104,17 @@ curl -X POST https://vidtube-ke5w.onrender.com/api/v1/users/register \
      -H "Content-Type: application/json" \
      -d '{"username":"john","email":"john@example.com","password":"secret"}'
 ```
+
+## Postman Testing
+
+Validate and explore the API with the included Postman collection:
+
+1. Import `postman_tests/VidTube.postman_collection.json` into Postman.  
+2. Create an environment (e.g. “VidTube”) with variable:  
+   - `VidTube` = `https://vidtube-ke5w.onrender.com/api/v1`  
+     (or `http://localhost:3000/api/v1` for local testing)  
+3. Select the environment and run individual requests or use the Collection Runner.  
+4. Inspect responses, update variables, and chain requests as needed.
 
 ## Usage & Endpoints
 

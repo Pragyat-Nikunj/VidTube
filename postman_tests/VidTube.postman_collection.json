@@ -1,0 +1,693 @@
+{
+	"info": {
+		"_postman_id": "df72cbb7-a3ad-4db0-83d8-2a96f0eafcc2",
+		"name": "VidTube",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43459186",
+		"_collection_link": "https://pragyatnikunj.postman.co/workspace/4552520d-841c-4fd4-8604-982f83d2b5b4/collection/43459186-df72cbb7-a3ad-4db0-83d8-2a96f0eafcc2?action=share&source=collection_link&creator=43459186"
+	},
+	"item": [
+		{
+			"name": "healthcheck",
+			"item": [
+				{
+					"name": "healthcheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/healthcheck"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullname",
+									"value": "two2",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "two3",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "two1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Pragyat/Downloads/IMG20231224131601.jpg"
+								},
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/C:/Users/Pragyat/Downloads/IMG20231224131601.jpg"
+								}
+							]
+						},
+						"url": "{{VidTube}}/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"one1@gmail.com\",\r\n    \"username\" : \"one3\",\r\n    \"password\" : \"123456789\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{VidTube}}/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{VidTube}}/users/refresh-Token"
+					},
+					"response": []
+				},
+				{
+					"name": "ChangePassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\" : \"12356789\",\r\n    \"newPassword\" : \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{VidTube}}/users/change-password"
+					},
+					"response": []
+				},
+				{
+					"name": "CurrentUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/users/current-user"
+					},
+					"response": []
+				},
+				{
+					"name": "UserChannelProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/users/c/one3"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAccountDetails",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\" : \"myname\",\r\n    \"email\" : \"myname@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{VidTube}}/users/update-account"
+					},
+					"response": []
+				},
+				{
+					"name": "WatchHistory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/users/history"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAvatar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Pragyat/Pictures/B.Tech-and-M.Tech-Fee-Structure-session-2023-2024_page-0001.jpg"
+								}
+							]
+						},
+						"url": "{{VidTube}}/users/update-avatar"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCover",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/C:/Users/Pragyat/Pictures/github-globe-banner-removebg.png"
+								}
+							]
+						},
+						"url": "{{VidTube}}/users/update-cover"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{VidTube}}/users/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tweets",
+			"item": [
+				{
+					"name": "createTweet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\" : \"This is a tweet.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{VidTube}}/tweets/createTweet"
+					},
+					"response": []
+				},
+				{
+					"name": "getUserTweets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/tweets/getUserTweets/67f4246705d1f8f6b284ce97"
+					},
+					"response": []
+				},
+				{
+					"name": "updateTweet",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\" : \"This tweet is updated.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{VidTube}}/tweets/updateTweet/67fdf35eb767ec9a740dcc85"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTweet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{VidTube}}/tweets/deleteTweet/67fdf3ac42f5d4ae0b6e815c"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Video",
+			"item": [
+				{
+					"name": "publishAVideo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "New Video",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Subscribe to my Youtube channel",
+									"type": "text"
+								},
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/C:/Users/Pragyat/Downloads/samplevideo1.mp4"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Pragyat/Downloads/Gl9ZneiWgAAxoMu.jpg"
+								}
+							]
+						},
+						"url": "{{VidTube}}/videos/publishVideo"
+					},
+					"response": []
+				},
+				{
+					"name": "getVideoById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/videos/getVideoById/6801461ee5f01be74bb6b87e"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllVideos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{VidTube}}/videos/getAllVideos?page=1&limit=10&query=new%20video&sortBy=createdAt&sortType=asc&userId=67f4246705d1f8f6b284ce97",
+							"host": [
+								"{{VidTube}}"
+							],
+							"path": [
+								"videos",
+								"getAllVideos"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "query",
+									"value": "new%20video"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt"
+								},
+								{
+									"key": "sortType",
+									"value": "asc"
+								},
+								{
+									"key": "userId",
+									"value": "67f4246705d1f8f6b284ce97"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateVideo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/C:/Users/Pragyat/Downloads/5538262-hd_1920_1080_25fps.mp4"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Pragyat/Downloads/tengyart-kSvpTrfhaiU-unsplash.jpg"
+								}
+							]
+						},
+						"url": "{{VidTube}}/videos/updateVideo/6801461ee5f01be74bb6b87e"
+					},
+					"response": []
+				},
+				{
+					"name": "togglePublish",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "{{VidTube}}/videos/togglePublish/6801461ee5f01be74bb6b87e"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteVideo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{VidTube}}/videos/deleteVideo/6801461ee5f01be74bb6b87e"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Like",
+			"item": [
+				{
+					"name": "toggleVideoLike",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{VidTube}}/likes/like/video/68127c742aabf791ef1d0675"
+					},
+					"response": []
+				},
+				{
+					"name": "toggleTweetLike",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{VidTube}}/likes/like/tweet/67fdf57a486a46521f63f818"
+					},
+					"response": []
+				},
+				{
+					"name": "LikedVideos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/likes/like/videos"
+					},
+					"response": []
+				},
+				{
+					"name": "toggleCommentLike",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{VidTube}}/likes/like/comment/6825c07bd1913d97813c91ee"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "AddComment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\" : \"This is a comment 2.0.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{VidTube}}/comments/addComment/68127c742aabf791ef1d0675"
+					},
+					"response": []
+				},
+				{
+					"name": "updateComment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\" : \"This comment is updated.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{VidTube}}/comments/updateComment/6825c07bd1913d97813c91ee"
+					},
+					"response": []
+				},
+				{
+					"name": "videoComments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/comments/videoComments/68127c742aabf791ef1d0675"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{VidTube}}/comments/deleteComment/6825c37cac92c70892623a3b"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "channelStats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/dashboard/channelStats/67f4246705d1f8f6b284ce97"
+					},
+					"response": []
+				},
+				{
+					"name": "channelVideos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/dashboard/channel/videos/67f4246705d1f8f6b284ce97"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Playlist",
+			"item": [
+				{
+					"name": "createPlaylist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"2 New Playlist\",\r\n    \"description\" : \"This is a playlist\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{VidTube}}/playlist/createPlaylist"
+					},
+					"response": []
+				},
+				{
+					"name": "userPlaylist",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"New Playlist\",\r\n    \"description\" : \"This is a playlist\"\r\n}"
+						},
+						"url": "{{VidTube}}/playlist/user/67f4246705d1f8f6b284ce97"
+					},
+					"response": []
+				},
+				{
+					"name": "PlaylistById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"2 New Playlist\",\r\n    \"description\" : \"This is a playlist\"\r\n}"
+						},
+						"url": "{{VidTube}}/playlist/6826fc52616e9fd2d5847550"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePlaylist",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"name\" : \"Playlist 2\",\r\n    \"description\" : \"This is updated.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{VidTube}}/playlist/6826fd2065d11e462e2a8d2d"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Playlist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{VidTube}}/playlist/6826fd2065d11e462e2a8d2d"
+					},
+					"response": []
+				},
+				{
+					"name": "AddVideoToPlaylist",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{VidTube}}/playlist/6826fc52616e9fd2d5847550/videos/68127c742aabf791ef1d0675"
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveVideoFromPlaylist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{VidTube}}/playlist/6826fc52616e9fd2d5847550/videos/68127c742aabf791ef1d0675"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription",
+			"item": [
+				{
+					"name": "toggleSubscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"2 New Playlist\",\r\n    \"description\" : \"This is a playlist\"\r\n}"
+						},
+						"url": "{{VidTube}}/subscription/subscribe/67f4246705d1f8f6b284ce97"
+					},
+					"response": []
+				},
+				{
+					"name": "subscribedChannels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/subscription/subscribedChannels/68270446050180296a229460"
+					},
+					"response": []
+				},
+				{
+					"name": "userChannelSubscribers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/subscription/channelSubscribers/67f4246705d1f8f6b284ce97"
+					},
+					"response": []
+				},
+				{
+					"name": "channelSubscriberCount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{VidTube}}/subscription/channelSubscriberCount/67f4246705d1f8f6b284ce97"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
